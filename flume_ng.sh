@@ -1,0 +1,1 @@
+flume-ng agent -n peAgent --conf /home/cloudera/ -f /home/cloudera/peAgentCust.properties -Dflume.root.logger=INFO,console
