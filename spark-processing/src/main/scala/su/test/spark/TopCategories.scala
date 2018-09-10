@@ -7,7 +7,7 @@ import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType
 
 import scala.collection.JavaConverters.seqAsJavaListConverter
 
-object TopCategories extends EventProcessingJob {
+object TopCategories extends RDDEventProcessingJob {
   override def process(): DataFrame = ss.createDataFrame(toRows(calcTopCategoriesRDD()), DBschema)
 
   override def RDBMSTableName(): String = "top_categories"

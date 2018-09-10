@@ -6,7 +6,7 @@ import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType
 
 import scala.collection.mutable
 
-object TopProductsInCategory extends EventProcessingJob {
+object TopProductsInCategory extends RDDEventProcessingJob {
   override def process(): DataFrame = ss.createDataFrame(toRows(calcTopProductsInEveryCategoryRDD()), DBSchema)
 
   override def RDBMSTableName(): String = "top_products_in_categories"
