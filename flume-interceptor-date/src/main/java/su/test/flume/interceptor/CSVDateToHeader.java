@@ -42,6 +42,7 @@ public class CSVDateToHeader implements Interceptor {
             headers.put(TimestampInterceptor.Constants.TIMESTAMP, Long.toString(date.getTime()));
             return event;
         } catch (Exception e) {
+            logger.error("Error parsing ",e);
             throw new RuntimeException(e);
         }
     }
